@@ -1,0 +1,525 @@
+/* Estilos generales */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Un gris oscuro para el fondo */
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header y Barra de Navegación */
+header {
+    background-color: #000000;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ff00; /* Verde brillante */
+    text-shadow: 0 0 5px #00ff00;
+    transition-property: color, text-shadow;
+    transition-duration: 1s;
+}
+
+.logo:hover {
+    color: #ff0d0d; /* Cambia a rojo al pasar el cursor */
+    text-shadow: #ff0d0d 0 0 10px; /* Resalta el texto con un brillo rojo */
+}
+
+/* Links de Navegación */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.nav-links > li > a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links > li > a:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
+
+/* Menús Desplegables */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #00ff00;
+    transition: all 0.3s ease;
+}
+
+/* Media Query para responsividad */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Altura del header */
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        border-top: 1px solid #00ff00;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links > li {
+        text-align: center;
+    }
+
+    .nav-links > li > a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #1a1a1a;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Desplegables en móvil */
+    .dropdown-menu {
+        position: static;
+        display: none; /* Oculto por defecto */
+        border: none;
+        background-color: #1a1a1a;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown-container:hover .dropdown-menu {
+        display: none; /* Desactivar hover en móvil */
+    }
+
+    .dropdown-container.open .dropdown-menu {
+        display: block; /* Mostrar con JS */
+    }
+
+    .dropdown-menu li a {
+        padding: 1rem 2rem;
+        color: #ccc;
+    }
+}
+
+/* Hero Section */
+    .dropdown-menu li a {
+        padding: 1rem 2rem;
+        color: #ccc;
+    }
+    
+/* Slogan Section */
+.slogan-section {
+    margin: 50px 10px 20px 10px;
+    background-color: #121212;
+}
+
+.slogan-container {
+    position: relative; /* Contenedor para el posicionamiento absoluto */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slogan-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    border-radius: 15px;
+    box-shadow: #019401;
+}
+
+.slogan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para legibilidad */
+    border-radius: 15px; /* Coincide con el radio de la imagen */
+    font-size: 10px;
+}
+
+.slogan-overlay h2 {
+    color: #00ff00;
+    font-size: 35px; /* Tamaño para PC */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    font-style: italic;
+    line-height: 1.3;
+    padding: 0 1rem; /* Evita que el texto toque los bordes */
+    margin: 0;
+}
+
+/* Media Query para Slogan Section */
+@media (max-width: 768px) {
+    .slogan-overlay h2 {
+        font-size: 30px; /* Tamaño para tablet/móvil grande */
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan-overlay h2 {
+        font-size: 2rem; /* Tamaño para móvil pequeño */
+    }
+}
+
+.kick-button {
+    display: block;
+    margin: 10px auto;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.kick-button:hover {
+    background-color: transparent;
+    color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+}
+
+.titulo {
+    text-align: center;
+    font-size: 40px;
+    margin: 5px 0 5px 0;
+    font-weight: bold;
+}
+
+.sobremi {
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+    color: #ffffff;
+    max-width: 500px;
+    border: 2px solid #5e5e5e;
+    border-style: dashed;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.img1 {
+    max-width: 500px;      
+    width: 100%;           
+    height: auto;          
+    display: block;        
+    margin: 2rem auto;     
+    border: 5px solid #00ff00; 
+}
+
+.text2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    max-width: 500px;
+    margin: 2rem auto; /* Centra el contenedor en la página con espacio vertical */
+    
+    /* Flexbox para alineación */
+    display: flex;
+    align-items: center;      /* Alinea verticalmente los items al centro */
+    justify-content: center;  /* Alinea horizontalmente los items al centro */
+    gap: 15px;                /* Espacio entre el texto y la imagen */
+}
+
+.imgd {
+    width: 50px;
+    height: auto; /* Mantiene la proporción */
+}
+
+.text3 {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+/*CLASES DE ARMA STYLE*/
+
+/* ...existing code... */
+
+/* Weapon Classes Accordion */
+.weapon-classes-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.weapon-category {
+    background-color: #1a1a1a;
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.weapon-category summary {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00ff00;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.weapon-category summary:hover {
+    background-color: #2a2a2a;
+}
+
+.weapon-category summary::marker {
+    content: ''; /* Oculta el marcador por defecto */
+}
+
+.weapon-category summary::-webkit-details-marker {
+    display: none; /* Oculta el marcador en Chrome/Safari */
+}
+
+.weapon-category summary::after {
+    content: '+'; /* Icono para estado cerrado */
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #00ff00;
+    transition: transform 0.3s;
+}
+
+.weapon-category[open] > summary::after {
+    transform: translateY(-50%) rotate(45deg); /* Rota el '+' para parecer una 'x' */
+}
+
+.weapon-class-content {
+    padding: 1rem 1.5rem;
+    background-color: #111;
+    border-top: 1px solid #00ff00;
+    color: #e0e0e0;
+}
+
+.weapon-class-content p {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.weapon-class-content pre {
+    background-color: #000;
+    border: 1px solid #333;
+    padding: 1px;
+    border-radius: 5px;
+    white-space: pre-wrap; /* Asegura que el texto se ajuste */
+    word-wrap: break-word;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+}
+
+.copy-btn {
+    display: block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    background-color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: transparent;
+    color: #00ff00;
+}
+
+.line1 {
+    width: 60px;
+    border-bottom: #00ff00 solid 5px;
+    padding-bottom: 5px;
+    margin-top:20px ;
+    margin-left: 10px;
+}
+.line2 {
+    width: 90px;
+    border-bottom: #00ff00 solid 5px;
+    margin-left: 10px;
+}
+
+.line3 {
+    width: 180px;
+    border-bottom: #00ff00 solid 5px;
+    margin-left: 10px;
+}
+
+.line4 {
+    width: 110px;
+    border-bottom: #00ff00 solid 5px;
+    margin-left: 10px;
+}
+
+.line5 {
+    width: 160px;
+    border-bottom: #00ff00 solid 5px;
+    margin-left: 10px;
+}
+
+.line6 {
+    width: 125px;
+    border-bottom: #00ff00 solid 5px;
+    margin-left: 10px;
+}
+
+.armas {
+    width: 300px;
+    height: auto; 
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.arco{
+    width: 150px;
+    height: auto; 
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.proxi {
+    text-align: center;
+}
+
+/*REDES SOCIALES*/
+
+/* Social Media Links Section */
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los iconos pasen a la siguiente línea en pantallas pequeñas */
+    gap: 1.5rem; /* Espacio entre iconos */
+    padding: 2rem 1rem 4rem 1rem; /* Espacio arriba y abajo */
+}
+
+.social-links-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #1a1a1a;
+    border: 2px solid #00ff00;
+    border-radius: 50%; /* Círculos perfectos */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.social-links-container a:hover {
+    background-color: #00ff00;
+    transform: scale(1.1) translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 20px rgba(0, 255, 0, 0.4);
+}
+
+/* Estilo para las imágenes dentro de los enlaces */
+.social-links-container img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain; /* Asegura que los logos no se deformen */
+    transition: filter 0.3s; /* Añade transición al filtro */
+}
+
+/* Efecto en la imagen al pasar el ratón sobre el enlace */
+.social-links-container a:hover img {
+    filter: brightness(0); /* Hace que la imagen se vuelva negra */
+}
