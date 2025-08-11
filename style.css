@@ -883,3 +883,14 @@ nav {
     height: 24px;
 }
 
+.updates-title {
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: bold;
+}
+
