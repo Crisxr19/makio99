@@ -1,6 +1,7 @@
 /* Estilos generales */
 html {
     scroll-behavior: smooth; /* Desplazamiento suave */
+    overflow-x: hidden;
 }
 
 body {
@@ -881,3 +882,4 @@ nav {
     width: 24px;
     height: 24px;
 }
+
