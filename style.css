@@ -964,4 +964,64 @@ nav {
     margin-top: 2rem;
     font-size: 0.9rem;
 
+    
+/* About Me Section */
+.about-me-section {
+    padding: 5rem 2rem;
+    background-color: #121212; /* Fondo consistente */
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-me-image-wrapper {
+    flex: 0 0 300px; /* Ancho fijo para la imagen */
+}
+
+.about-me-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Una imagen circular se ve muy moderna */
+    border: 4px solid #00ff00;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+}
+
+.about-me-text-wrapper {
+    flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.about-me-text-wrapper h2 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1.5rem 0;
+    text-align: left;
+}
+
+.about-me-text-wrapper p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Media Query para hacerlo responsivo */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column; /* Apila la imagen y el texto en móvil */
+        text-align: center;
+    }
+
+    .about-me-text-wrapper h2 {
+        text-align: center; 
+}}
+
+
 
