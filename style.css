@@ -523,9 +523,9 @@ nav {
 /* Efecto en la imagen al pasar el ratón sobre el enlace */
 .social-links-container a:hover img {
     filter: brightness(0); /* Hace que la imagen se vuelva negra */
-
 }
 
+/* UPDATE POR SUBIR A GITHUB */
 
 .textk {
     text-align: center;
@@ -894,6 +894,21 @@ nav {
     font-weight: bold;
 }
 
+/* Línea decorativa debajo del título */
+.updates-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00ff00;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* UPDATE POR SUBIR A GITHUB */
 
 /* Schedule Section */
 .schedule-section {
@@ -963,8 +978,12 @@ nav {
     font-style: italic;
     margin-top: 2rem;
     font-size: 0.9rem;
+}
 
-    
+
+/*ABOUT ME SECTION*/
+
+
 /* About Me Section */
 .about-me-section {
     padding: 5rem 2rem;
@@ -1022,6 +1041,3 @@ nav {
     .about-me-text-wrapper h2 {
         text-align: center; 
 }}
-
-
-
